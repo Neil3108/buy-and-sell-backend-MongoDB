@@ -19,12 +19,12 @@ app.use(cookieParser())
 app.use('/', express.static(path.join(__dirname, '/public')))
 app.use('/', require('./routes/root'))
 app.use('/api/listings/:id', require('./routes/getListingRoutes'))
-app.use('/api/new-listing', require('./routes/createNewListingRoutes')) // Working
-app.use('/api/listings', require('./routes/getAllListingsRoutes')) // Working
-app.use('/api/edit-listing/:id', require('./routes/updateListingRoutes')) // Working
-app.use('/api/listings/:id/add-view', require('./routes/addViewToListingRoutes')) // Working
-app.use('/api/listings/user/:userId', require('./routes/getUserListingsRoutes')) // Working
-app.use('/api/my-listings', require('./routes/getUserListingsRoutes')) // Working
+app.use('/api/new-listing', require('./routes/createNewListingRoutes'))
+app.use('/api/listings', require('./routes/getAllListingsRoutes'))
+app.use('/api/edit-listing/:id', require('./routes/updateListingRoutes'))
+app.use('/api/listings/:id/add-view', require('./routes/addViewToListingRoutes'))
+app.use('/api/listings/user/:userId', require('./routes/getUserListingsRoutes'))
+app.use('/api/my-listings', require('./routes/getUserListingsRoutes'))
 
 app.all('*', (req, res) => {
     res.status(404)
