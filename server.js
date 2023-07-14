@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use('/', express.static(path.join(__dirname, '/public')))
 app.use('/', require('./routes/root'))
-app.use('/api/listings/:id', require('./routes/getListingRoutes')) // Working
+app.use('/api/listings/:id', require('./routes/getListingRoutes'))
 app.use('/api/new-listing', require('./routes/createNewListingRoutes')) // Working
 app.use('/api/listings', require('./routes/getAllListingsRoutes')) // Working
 app.use('/api/edit-listing/:id', require('./routes/updateListingRoutes')) // Working
